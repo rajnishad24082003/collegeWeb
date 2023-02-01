@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "profile": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "$user_id": {
+        ".read": "$user_id != null",
+        ".write": "$user_id != null"
+      }
+    },
+      "files": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "$files_id": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "status": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "$user_id": {
+        ".read": true,
+        ".write": "$user_id === auth.uid"
+      }
+    },
+    ".read": false,
+    ".write": false
+  }
+}
